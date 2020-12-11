@@ -129,7 +129,7 @@ html {
   }
 
   #ceros-div {
-    float: right;
+    /* float: right; */
     height: 800px;
     width: 800px;
     margin-bottom: 40px;

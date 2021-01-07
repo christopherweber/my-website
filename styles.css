@@ -127,14 +127,12 @@ html {
     border: none;
     cursor: pointer;
   }
-
+/* 
   #ceros-div {
-    /* float: right; */
     height: 800px;
     width: 800px;
     margin-bottom: 40px;
     position: relative;
     text-align: center;
-    /* left: 20%; */
     bottom: 35%;
-  }
+  } */

@@ -5,381 +5,148 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<style type="text/scss">
-		$tiber: #09383E;
-$elephant: #0C383E;
-$white: #fff;
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
-// rem font sizing.
-html { font-size: 62.5%; }
-body { font-size: 1.4rem; } /* =14px */
-h1   { font-size: 2.4rem; } /* =24px */
-
-.container__item {
-    margin: 0 auto 40px;
+:root {
+	--primary-color: #3a4052;
 }
 
-.landing-page-container {
-    width: 100%;
-    min-height: 100%;
-    height: 90rem;
-    background-image: url('https://s29.postimg.org/vho8xb2pj/landing_bg.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-    overflow: hidden;
-    font-family: 'Montserrat', sans-serif;
-    color: $tiber;
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
-.content__wrapper {
-    max-width: 1200px;
-    width: 90%;
-    height: 100%;
-    margin: 0 auto;
-    position: relative;
+body {
+	font-family: 'Open Sans', sans-serif;
+	line-height: 1.5;
 }
 
-.header {
-    width: 100%;
-    height: 2rem;
-    padding: 4.5rem 0;
-    display: block;
+a {
+	text-decoration: none;
+	color: var(--primary-color);
 }
 
-.menu-icon {
-    width: 2.5rem;
-    height: 1.5rem;
-    display: inline-block;
-    cursor: pointer;
+h1 {
+	font-weight: 300;
+	font-size: 60px;
+	line-height: 1.2;
+	margin-bottom: 15px;
 }
 
-.header__item {
-    display: inline-block;
-    float: left;
+.showcase {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: #fff;
+	padding: 0 20px;
 }
 
-.menu-icon__line {
-    width: 1.5rem;
-    height: 0.2rem;
-    background-color: $elephant;
-    display: block;
-
-    &:before,
-    &:after {
-        content: '';
-        width: 1.5rem;
-        height: 0.2rem;
-        background-color: $elephant;
-        display: inline-block;
-        position: relative;
-    }
-
-    &:before {
-        left: 0.5rem;
-        top: -0.6rem;
-    }
-
-    &:after {
-        top: -1.8rem;
-    }
+.video-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: var(--primary-color) url('./https://traversymedia.com/downloads/cover.jpg') no-repeat center
+		center/cover;
 }
 
-.heading {
-    width: 90%;
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 0;
-    line-height: 1.7rem;
-    margin: 0 auto;
-    text-align: center;
+.video-container video {
+	min-width: 100%;
+	min-height: 100%;
+  position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	object-fit: cover;
 }
 
-.social-container {
-    width: 7.25rem;
-    list-style: none;
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-    float: right;
-
-    .social__icon {
-        float: left;
-        cursor: pointer;
-
-        &.social__icon--dr {
-          margin-left: 0.5rem;
-          
-          img {
-             height: 2rem;
-          }
-        }
-        &.social__icon--in {
-          margin-left: 0.75rem;
-          
-          img {
-             height: 2rem;
-          }
-        }
-
-        &.social__icon--fb {
-            img {
-                height: 2rem;
-                margin: 0rem;
-            }
-        }
-    }
+.video-container:after {
+	content: '';
+	z-index: 1;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.5);
+	position: absolute;
 }
 
-.coords {
-    font-size: 1rem;
-    display: inline-block;
-    transform: rotate(-90deg) translateY(50%);
-    float: left;
-    position: relative;
-    top: 40%;
-    letter-spacing: 0.2rem;
-    left: -11.5rem;
-    margin: 0;
+.content {
+	z-index: 2;
 }
 
-.ellipses-container {
-    width: 50rem;
-    height: 50rem;
-    border-radius: 50%;
-    margin: 0 auto;
-    position: relative;
-    top: 10.5rem;
-
-    .greeting {
-        position: absolute;
-        top: 11.6rem;
-        left: 13rem;
-        right: 0;
-        margin: 0 auto;
-        text-transform: uppercase;
-        letter-spacing: 4rem;
-        font-size: 2.2rem;
-        font-weight: 400;
-        opacity: 0.5;
-
-        &:after{
-            content: '';
-            width: 0.3rem;
-            height: 0.3rem;
-            border-radius: 50%;
-            display: inline-block;
-            background-color: $elephant;
-            position: relative;
-            top: -0.65rem;
-            left: -5.05rem;
-        }
-    }
-
+.btn {
+	display: inline-block;
+	padding: 10px 30px;
+	background: var(--primary-color);
+	color: #fff;
+	border-radius: 5px;
+	border: solid #fff 1px;
+	margin-top: 25px;
+	opacity: 0.7;
 }
 
-.ellipses {
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    border-style: solid;
+.btn:hover {
+	transform: scale(0.98);
 }
 
-.ellipses__outer--thin {
-    width: 100%;
-    height: 100%;
-    border-width: 1px;
-    border-color: rgba(9, 56, 62, 0.1);
-    animation: ellipsesOrbit 15s ease-in-out infinite;
-
-
-    &:after {
-      content: "";
-      background-image: url('https://s29.postimg.org/5h0r4ftkn/ellipses_dial.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      position: absolute;
-      opacity: 0.15;
-    }
+#about {
+	padding: 40px;
+	text-align: center;
 }
 
-.ellipses__outer--thick {
-    width: 99.5%;
-    height: 99.5%;
-    border-color: $tiber transparent;
-    border-width: 2px;
-    transform: rotate(-45deg);
-    animation: ellipsesRotate 15s ease-in-out infinite;
+#about p {
+	font-size: 1.2rem;
+	max-width: 600px;
+	margin: auto;
 }
 
-.ellipses__orbit {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-width: 2px;
-    border-color: $tiber;
-    top: 5rem;
-    right: 6.75rem;
-
-    &:before {
-        content: '';
-        width: 0.7rem;
-        height: 0.7rem;
-        border-radius: 50%;
-        display: inline-block;
-        background-color: $tiber;
-        margin: 0 auto;
-        left: 0;
-        right: 0;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-
-    }
+#about h2 {
+	margin: 30px 0;
+	color: var(--primary-color);
 }
 
-.scroller {
-    width: 7.5rem;
-    display: inline-block;
-    float: right;
-    position: relative;
-    top: -15%;
-    transform: translateY(50%);
-    overflow: hidden;
-
-
-    .page-title {
-        font-family: 'Playfair Display', serif;
-        letter-spacing: 0.5rem;
-        display: inline-block;
-        float: left;
-        margin-top: 1rem;
-    }
-
-    .timeline {
-        width: 1.5rem;
-        height: 9rem;
-        display: inline-block;
-        float: right;
-
-        .timeline__unit {
-            width: 100%;
-            height: 0.1rem;
-            display: block;
-            background-color: $elephant;
-            margin: 0 0 2rem;
-            opacity: 0.2;
-
-            &.timeline__unit--active {
-                opacity: 1;
-
-                &:after {
-                    opacity: 0.2;
-                }
-            }
-
-            &:after {
-                content: '';
-                width: 70%;
-                height: 0.1rem;
-                display: block;
-                position: relative;
-                float: right;
-                background-color: $elephant;
-                top: 1rem;
-            }
-        }
-    }
+.social a {
+	margin: 0 5px;
 }
 
-
-@keyframes ellipsesRotate {
-    0% {
-        transform: rotate(-45deg);
-    }
-
-    100% {
-        transform: rotate(-405deg);
-    }
-}
-
-@keyframes ellipsesOrbit {
-    0% {
-        transform: rotate(0);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
 	</style>
 </head>
 <body>
-	<html>
-    <head>
-        <meta charset="UTF-8"/>
-    </head>
+	<section class="showcase">
+		<div class="video-container">
+			<video src="https://traversymedia.com/downloads/video.mov" autoplay muted loop></video>
+		</div>
+		<div class="content">
+			<h1>Shoot For The Stars</h1>
+			<h3>Full screen video landing page</h3>
+			<a href="#about" class="btn">Read More</a>
+		</div>
+	</section>
 
-    <body>
-        <div class="container">
-            <div class="container__item landing-page-container">
-                <div class="content__wrapper">
+	<section id="about">
+		<h1>About</h1>
+		<p>
+			This is a landing page with a full screen video background. Feel free to
+			use this landing page in your projects. keep adding sections, change the
+			video, content , etc
+		</p>
 
-                    <header class="header">
-                        <div class="menu-icon header__item">
-                            <span class="menu-icon__line"></span>
-                        </div>
+		<h2>Follow Me On Social Media</h2>
 
-                        <h1 class="heading header__item">D-UI</h1>
-
-                        <ul class="social-container header__item">
-                            <li class="social__icon social__icon--fb">
-                                <img src="https://image.flaticon.com/icons/svg/1077/1077041.svg" alt="facebook">
-                            </li>
-                            <li class="social__icon social__icon--dr">
-                                <img src="https://image.flaticon.com/icons/svg/25/25631.svg" alt="dribbble">
-                            </li>
-                            <li class="social__icon social__icon--in">
-                                <img src="https://image.flaticon.com/icons/svg/1077/1077042.svg" alt="instagram">
-                            </li>
-                        </ul>
-                    </header>
-
-                    <p class="coords">N 49° 16' 35.173"  /  W 0° 42' 11.30"</p>
-
-                    <div class="ellipses-container">
-
-                        <h2 class="greeting">Hello</h2>
-
-                        <div class="ellipses ellipses__outer--thin">
-
-                            <div class="ellipses ellipses__orbit"></div>
-
-                        </div>
-
-                        <div class="ellipses ellipses__outer--thick"></div>
-                    </div>
-
-                    <div class="scroller">
-                        <p class="page-title">home</p>
-
-                        <div class="timeline">
-                            <span class="timeline__unit"></span>
-                            <span class="timeline__unit timeline__unit--active"></span>
-                            <span class="timeline__unit"></span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </body>
-</html>
+		<div class="social">
+		<a href="https://twitter.com/traversymedia" target="_blank"><i class="fab fa-twitter fa-3x"></i></a>
+			<a href="https://facebook.com/traversymedia" target="_blank"><i class="fab fa-facebook fa-3x"></i></a>
+			<a href="https://github.com/bradtraversy" target="_blank"><i class="fab fa-github fa-3x"></i></a>
+			<a href="https://www.linkedin.com/in/bradtraversy" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
+		</div>
+	</section>
 
 </body>
 </html>

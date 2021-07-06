@@ -81,8 +81,8 @@ img {
   top: 10px;
   left: 0;
   background: #000;
-  -webkit-transition: .75s;
-  transition: .75s;
+  -webkit-transition: .25s;
+  transition: .25s;
 }
 
 .loading-title {

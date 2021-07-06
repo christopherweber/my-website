@@ -1,10 +1,6 @@
 @charset "utf-8";
 
-/*==================================================
-ギャラリーのためのcss
-===================================*/
 
-/*＝＝＝並び替えボタンのCSS*/
 .sort-btn{
 	display: flex;
 	justify-content: center;
@@ -20,11 +16,11 @@
 	margin:0 10px;
 }
 
-.sort-btn li.active{/*ボタンに現在地＝activeというクラス名がついたら背景色を変更*/
+.sort-btn li.active{
 	background:#ccc;	
 }
 
-/*横幅が480px以下になった際の指定*/
+
 @media only screen and (max-width: 480px) {
 .sort-btn{
 	justify-content: space-between;
@@ -37,41 +33,40 @@
 	}	
 }
 
-/*＝＝＝Muuriのレイアウトのための調整 */
 .grid {
-  position: relative;/*並び替えの基準点を指定*/
+  position: relative;
 }
 
-/*各画像の横幅などの設定*/
+
 .item {
   display: block;
   position: absolute;
-  width: 33%;/*横並びで3つ表示*/
+  width: 33%;
   z-index: 1;
 }
 
-/*内側のボックスの高さが崩れないように維持*/
+
 .item-content {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-/*画像の横幅を100%にしてレスポンシブ化*/
+
 .grid img{
 	width:100%;
 	height:auto;
-	vertical-align: bottom;/*画像の下にできる余白を削除*/
+	vertical-align: bottom;
 }
 
-/*横幅が768px以下になった際の指定*/
+
 @media only screen and (max-width: 768px) {
 .item {
-  width: 49.5%;/*横並びで2つ表示*/
+  width: 49.5%;
 }
 }
 
-/*＝＝＝fancyboxサムネイル背景と画像選択時の枠線の指定*/
+
 .fancybox-thumbs {
     background: transparent!important;
 }
@@ -81,7 +76,7 @@
 }
 
 
-/*========= レイアウトのためのCSS ===============*/
+
 ul{
 	margin:0;
 	padding: 0;

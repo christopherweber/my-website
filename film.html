@@ -21,6 +21,10 @@
 		<h1 class="loading-title">loading</h1>
 		<div class="loading-progress"></div>
 	  </div> -->
+
+	  <div id="preloader">
+		<div id="status">&nbsp;</div>
+	  </div>
 	  
 
 	<h1 class="title">Chris Weber</h1>
@@ -204,7 +208,7 @@
 
 <!--/wrapper--></div>
 
-<script>
+<!-- <script>
 	function getRandomArbitrary(min, max) {
 return Math.random() * (max - min) + min;
 }
@@ -243,8 +247,15 @@ $('.main-nav li a').removeClass('active');
 $this.addClass('active');
 router(route);
 });
-</script>
+</script> -->
 
+<script>/* Preloader */
+$(window).on('load', function() { // makes sure the whole site is loaded 
+  $('#status').fadeOut(); // will first fade out the loading animation 
+  $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+  $('body').delay(350).css({'overflow':'visible'});
+})
+</script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
 <script src="https://unpkg.com/muuri@0.8.0/dist/muuri.min.js"></script>

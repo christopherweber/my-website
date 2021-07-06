@@ -1,110 +1,143 @@
-@charset "utf-8";
-
-
-.sort-btn{
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	padding:50px 20px;
+body {
+  font-family: 'Open Sans';
 }
 
-.sort-btn li{
-	background:#eee;
-	border-radius:10px;
-	cursor: pointer;
-	padding: 10px;
-	margin:0 10px;
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-.sort-btn li.active{/*ボタンに現在地＝activeというクラス名がついたら背景色を変更*/
-	background:#ccc;	
+.title,
+.loading-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 5em;
+  letter-spacing: .085em;
+  margin: 4.5rem 0 1rem;
 }
 
-/*横幅が480px以下になった際の指定*/
-@media only screen and (max-width: 480px) {
-.sort-btn{
-	justify-content: space-between;
-}
-	
-.sort-btn li{
-	width:48%;
-	margin:0 0 10px 0;
-	text-align:center;
-	}	
+.subtitle {
+  font-size: 2em;
+  margin-top: 1.7rem;
 }
 
-/*＝＝＝Muuriのレイアウトのための調整 */
-.grid {
-  position: relative;/*並び替えの基準点を指定*/
+.title,
+.loading-title,
+.subtitle {
+  font-family: 'Fjalla One';
 }
 
-/*各画像の横幅などの設定*/
-.item {
+.tagline {
+  text-align: center;
+  text-transform: uppercase;
   display: block;
-  position: absolute;
-  width: 33%;/*横並びで3つ表示*/
-  z-index: 1;
+  letter-spacing: .3em;
+  margin: 10px 0 40px;
+  color: #aaa;
 }
 
-/*内側のボックスの高さが崩れないように維持*/
-.item-content {
-  position: relative;
-  width: 100%;
+.profile-img {
+  float: left;
+  width: 350px;
+  margin-right: 1.5em;
+  display: block;
+}
+
+.main-nav {
+  text-align: center;
+}
+
+.main-nav ul {
+  padding: 0;
+}
+
+.main-nav li {
+  display: inline-block;
+  text-decoration: none;
+  margin: 0 20px;
+  text-transform: uppercase;
+}
+
+.main-nav li a {
+  text-decoration: none;
+  color: #000;
+}
+
+.main-nav li a:hover,
+.main-nav li a.active {
+  color: #aaa;
+}
+
+.page {
+  max-width: 980px;
+  padding: 0 20px;
+  margin: 75px auto 0;
+}
+
+.page a {
+  color: #000;
+}
+
+.loading {
+  position: fixed;
   height: 100%;
+  width: 100%;
+  top: 10px;
+  left: 0;
+  background: #000;
+  -webkit-transition: .75s;
+  transition: .75s;
 }
 
-/*画像の横幅を100%にしてレスポンシブ化*/
-.grid img{
-	width:100%;
-	height:auto;
-	vertical-align: bottom;/*画像の下にできる余白を削除*/
+.loading-title {
+  color: #fff;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
-/*横幅が768px以下になった際の指定*/
-@media only screen and (max-width: 768px) {
-.item {
-  width: 49.5%;/*横並びで2つ表示*/
-}
-}
-
-/*＝＝＝fancyboxサムネイル背景と画像選択時の枠線の指定*/
-.fancybox-thumbs {
-    background: transparent!important;
-}
-
-.fancybox-thumbs__list a:before {
-    border: 6px solid #FA999B;
+.loading-progress {
+  height: 11px;
+  background: #000;
+  top: -11px;
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  -webkit-transition: .35s;
+  transition: .35s;
 }
 
-
-/*========= レイアウトのためのCSS ===============*/
-ul{
-	margin:0;
-	padding: 0;
-	list-style: none;
+.about-me {
+  margin: 20px 0 0;
 }
 
-a{
-	color: #333;
+@media (max-width: 900px) {
+  .profile-img {
+    float: none;
+    margin: 0 auto;
+    width: 600px;
+  }
+  .about-me {
+    max-width: 600px;
+    margin: 0 auto;
+  }
 }
 
-a:hover,
-a:active{
-	text-decoration: none;
+@media (max-width: 780px) {
+  html {
+    font-size: .85em;
+  }
+  .main-nav li {
+    margin: 0 5px;
+  }
+  .page {
+    margin-top: 20px;
+  }
+  .profile-img {
+    margin-top: 25px;
+  }
 }
-
-h1{
-	text-align: center;
-	font-size:6vw;
-	letter-spacing: 0.1em;
-	text-transform: uppercase;
-	margin:30px 0;
-}
-
-p{
-	margin:0 10px 10px 10px;
-	word-wrap : break-word;
-  margin: auto 0;
-}
-
-
+/*# sourceMappingURL=styles.css.map */

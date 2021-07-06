@@ -20,18 +20,18 @@
 	<h1 class="title">Chris Weber</h1>
 	<nav class="main-nav">
 		<ul>
-		  <li><a class="active" id="about-page" data-page="about" href="index.html">About</a></li>
-		  <li><a href="film.html" id="film" data-page="film">Film</a></li>
-		  <li><a href="#" id="contact-page" data-page="contact">Contact</a></li>
+			<li><a class="active" id="about-page" data-page="about" href="index.html">About</a></li>
+			<li><a href="film.html" id="film" data-page="film">Film</a></li>
+			<li><a href="#" id="contact-page" data-page="contact">Contact</a></li>
 		</ul>
-	  </nav>
-
-	  	  <!-- Loading -->
-		<div class="loading">
-		  <h1 class="loading-title">loading</h1>
-		  <div class="loading-progress"></div>
-		</div>
-
+	</nav>
+	
+	<!-- Loading -->
+	<div class="loading">
+	  <h1 class="loading-title">loading</h1>
+	  <div class="loading-progress"></div>
+	</div>
+	
 	  <br>
 
 <div class="wrapper">
@@ -202,6 +202,47 @@
 	</ul>
 
 <!--/wrapper--></div>
+
+<script>
+	function getRandomArbitrary(min, max) {
+return Math.random() * (max - min) + min;
+}
+
+// super simple router - go to page specified in hash, otherwise go to "default"
+function router (route) {
+const pageName = route ? route : $('.default.page').attr('data-page-name');
+const $page = $(`[data-page-name="${pageName}"]`);
+$('.page').css('display', 'none');
+$('[data-page]').removeClass('active');
+$(`[data-page="${pageName}"]`).addClass('active');
+$page.css('display', 'block');
+}
+router();
+
+// fake loader
+let progress = 0;
+const fakeLoaderInterval = window.setInterval(function() {
+const $lp = $('.loading-progress');
+progress = progress + getRandomArbitrary(10, 25)
+$lp.css('transform', `translateX(${progress}%)`);
+
+if (progress >= 75) {
+window.clearInterval(fakeLoaderInterval);
+$lp.css('transform', 'translateX(100%)');
+setTimeout(() => $('.loading').css('transform', 'translateY(calc(100% + 10px))'), 400);
+}
+}, getRandomArbitrary(100, 500));
+
+// navigation
+$('.main-nav li a').on('click', e => {
+const $this = $(e.currentTarget);
+const route = $this.attr('data-page');
+
+$('.main-nav li a').removeClass('active');
+$this.addClass('active');
+router(route);
+});
+</script>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>

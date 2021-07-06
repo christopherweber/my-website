@@ -81,8 +81,8 @@ img {
   top: 10px;
   left: 0;
   background: #000;
-  -webkit-transition: .25s;
-  transition: .25s;
+  -webkit-transition: .20s;
+  transition: .20s;
 }
 
 .loading-title {
@@ -102,8 +102,8 @@ img {
   bottom: 0;
   width: 100%;
   position: absolute;
-  -webkit-transition: .35s;
-  transition: .35s;
+  -webkit-transition: .20s;
+  transition: .20s;
 }
 
 .about-me {

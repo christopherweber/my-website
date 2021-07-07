@@ -57,7 +57,7 @@ $(window).on('load',function(){	//画面遷移時にギャラリーの画像が�
 			Object.entries(obj).forEach(([key, value]) => {
 			  // console.log(obj.url_o)
 				// console.log(`${key} ${value}`);
-			  console.log(mainDiv)
+			  console.log(grid)
 			  grid.innerHTML += `
 			  <li class="item sort01">
 				  <div class="item-content">

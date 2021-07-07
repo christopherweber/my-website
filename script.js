@@ -66,8 +66,8 @@ $(window).on('load',function(){	//画面遷移時にギャラリーの画像が�
 			// 	  <a href='${obj.url_o}' data-caption=""><img src='${obj.url_o}' alt=""></a>
 			// 	  </div>
 			// </li>`
-            newURL.href="example.com"
-            newIMG.src="example.com"
+            newURL.href=obj.url_o
+            newIMG.src=obj.url_o
 			});
 			console.log('huh');
 		});

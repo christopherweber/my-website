@@ -17,11 +17,6 @@
 
 <body>
 
-	<!-- <div class="loading">
-		<h1 class="loading-title">loading</h1>
-		<div class="loading-progress"></div>
-	  </div> -->
-
 	  <div id="preloader">
 		<div id="status">&nbsp;</div>
 	  </div>
@@ -39,16 +34,10 @@
 	
 	  <br>
 
-<div class="wrapper">
-
-	
+<div class="wrapper" id="main">
 
   <p style="text-align: center; font-style: italic;">35mm Canon AE1 and Yashica D</p>
 
-	<div id="main">
-
-
-	</div>
       <!-- <ul class="sort-btn"> -->
         <!-- <li class="sort00 active"></li> -->
         <!-- <!-- <li class="sort01">Group 2</li> -->
@@ -294,6 +283,39 @@ $(window).on('load', function() { // makes sure the whole site is loaded
   $('body').delay(350).css({'overflow':'visible'});
 })
 </script>
+
+<script>
+
+	let mainDiv = document.getElementById("main")
+		console.log(mainDiv)
+		
+	fetch(`https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=f6c45f66b34eff6e25f9444469156891&photoset_id=72157719506903444&user_id=193401748@N04&extras=url_o&format=json&nojsoncallback=1`)
+	  .then((response) => {
+		return response.json();
+	  })
+	  .then((data) => {
+	  
+	
+	  const newData = data.photoset.photo
+		// var newData = JSON.stringify(data)
+	   // console.log(data.photoset.photo[0].url_o)
+		  newData.forEach(obj => {
+			Object.entries(obj).forEach(([key, value]) => {
+			  // console.log(obj.url_o)
+				// console.log(`${key} ${value}`);
+			  console.log(mainDiv)
+			  main.innerHTML += `<ul class="grid">
+			  <li class="item sort01">
+				  <div class="item-content">
+				  <a href='${obj.url_o}' data-caption=""><img src='${obj.url_o}' alt=""></a>
+				  </div>
+				  </li>
+		  </ul>`
+			});
+			console.log('huh');
+		});
+	  });
+	</script>
 
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

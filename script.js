@@ -57,7 +57,7 @@ $(window).on('load',function(){	//画面遷移時にギャラリーの画像が�
 	   // console.log(data.photoset.photo[0].url_o)
 		  newData.forEach(obj => {
 			Object.entries(obj).forEach(([key, value]) => {
-			  // console.log(obj.url_o)
+			  console.log(obj.url_o)
 				// console.log(`${key} ${value}`);
 			  console.log(newURL, newIMG)
             // var list = document.getElementById("newGrid")

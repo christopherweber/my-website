@@ -42,31 +42,32 @@ $(window).on('load',function(){	//画面遷移時にギャラリーの画像が�
         
     });
 
-    let mainGrid = document.getElementsByClassName("grid")
-    console.log(mainGrid)
-
-    fetch(`https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=f6c45f66b34eff6e25f9444469156891&photoset_id=72157719506903444&user_id=193401748@N04&extras=url_o&format=json&nojsoncallback=1`)
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
+    let mainDiv = document.getElementById("main")
+    console.log(mainDiv)
     
+fetch(`https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=f6c45f66b34eff6e25f9444469156891&photoset_id=72157719506903444&user_id=193401748@N04&extras=url_o&format=json&nojsoncallback=1`)
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
   
-    const newData = data.photoset.photo
-      // var newData = JSON.stringify(data)
-     // console.log(data.photoset.photo[0].url_o)
-        newData.forEach(obj => {
-          Object.entries(obj).forEach(([key, value]) => {
-            // console.log(obj.url_o)
-              // console.log(`${key} ${value}`);
-            console.log(mainGrid)
-            mainGrid.innerHTML += `
-            <li class="item sort01">
-                <div class="item-content">
-                <a href='${obj.url_o}' data-caption=""><img src='${obj.url_o}' alt=""></a>
-                </div>
-            </li>`
-          });
-          console.log('did it work!?!');
-      });
+
+  const newData = data.photoset.photo
+    // var newData = JSON.stringify(data)
+   // console.log(data.photoset.photo[0].url_o)
+      newData.forEach(obj => {
+        Object.entries(obj).forEach(([key, value]) => {
+          // console.log(obj.url_o)
+            // console.log(`${key} ${value}`);
+          console.log(mainDiv)
+          main.innerHTML += `<ul class="grid">
+          <li class="item sort01">
+		      <div class="item-content">
+		      <a href='${obj.url_o}' data-caption=""><img src='${obj.url_o}' alt=""></a>
+		      </div>
+		      </li>
+      </ul>`
+        });
+        console.log('huh');
     });
+  });

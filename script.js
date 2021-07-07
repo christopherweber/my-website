@@ -1,5 +1,5 @@
 $(window).on('load',function(){	//画面遷移時にギャラリーの画像が被らないように、すべての読み込みが終わった後に実行する
-
+    var gridDiv = document.getElementsByClassName('grid')
     //＝＝＝Muuriギャラリープラグイン設定
     var grid = new Muuri('.grid', {
     
@@ -58,7 +58,7 @@ $(window).on('load',function(){	//画面遷移時にギャラリーの画像が�
 			  // console.log(obj.url_o)
 				// console.log(`${key} ${value}`);
 			  console.log(grid)
-			  grid.innerHTML += `
+			  gridDiv.innerHTML += `
 			  <li class="item sort01">
 				  <div class="item-content">
 				  <a href='${obj.url_o}' data-caption=""><img src='${obj.url_o}' alt=""></a>

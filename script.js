@@ -60,7 +60,8 @@ $(window).on('load',function(){	//画面遷移時にギャラリーの画像が�
 			  // console.log(obj.url_o)
 				// console.log(`${key} ${value}`);
 			//   console.log(newURL, newIMG)
-            var list = document.getElementById(newGrid)
+            var list = document.getElementById("newGrid")
+            
 			  list.innerHTML += `
 			  <li class="item sort01">
 				  <div class="item-content">

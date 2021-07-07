@@ -1,5 +1,4 @@
 $(window).on('load',function(){	//画面遷移時にギャラリーの画像が被らないように、すべての読み込みが終わった後に実行する
-    var gridDiv = document.getElementsByClassName('grid')
     //＝＝＝Muuriギャラリープラグイン設定
     var grid = new Muuri('.grid', {
     
@@ -48,22 +47,27 @@ $(window).on('load',function(){	//画面遷移時にギャラリーの画像が�
 		return response.json();
 	  })
 	  .then((data) => {
+
+        let newURL = document.getElementById("h")
+        let newIMG = document.getElementById("i")
 	  
 	
-	  const newData = data.photoset.photo
+	    const newData = data.photoset.photo
 		// var newData = JSON.stringify(data)
 	   // console.log(data.photoset.photo[0].url_o)
 		  newData.forEach(obj => {
 			Object.entries(obj).forEach(([key, value]) => {
 			  // console.log(obj.url_o)
 				// console.log(`${key} ${value}`);
-			  console.log(grid)
-			  gridDiv.innerHTML += `
-			  <li class="item sort01">
-				  <div class="item-content">
-				  <a href='${obj.url_o}' data-caption=""><img src='${obj.url_o}' alt=""></a>
-				  </div>
-			</li>`
+			  console.log(newURL, newIMG)
+			//   gridDiv.innerHTML += `
+			//   <li class="item sort01">
+			// 	  <div class="item-content">
+			// 	  <a href='${obj.url_o}' data-caption=""><img src='${obj.url_o}' alt=""></a>
+			// 	  </div>
+			// </li>`
+            newURL.href="example.com"
+            newIMG.src="example.com"
 			});
 			console.log('huh');
 		});

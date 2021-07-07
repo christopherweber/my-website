@@ -48,8 +48,8 @@ $(window).on('load',function(){	//画面遷移時にギャラリーの画像が�
 	  })
 	  .then((data) => {
 
-        // let newURL = document.getElementById("h")
-        // let newIMG = document.getElementById("i")
+        let newURL = document.getElementById("h")
+        let newIMG = document.getElementById("i")
 	  
 	
 	    const newData = data.photoset.photo
@@ -59,17 +59,17 @@ $(window).on('load',function(){	//画面遷移時にギャラリーの画像が�
 			Object.entries(obj).forEach(([key, value]) => {
 			  // console.log(obj.url_o)
 				// console.log(`${key} ${value}`);
-			//   console.log(newURL, newIMG)
-            var list = document.getElementById("newGrid")
+			  console.log(newURL, newIMG)
+            // var list = document.getElementById("newGrid")
             
-			  list.innerHTML += `
-			  <li class="item sort01">
-				  <div class="item-content">
-				  <a href='${obj.url_o}' data-caption=""><img src='${obj.url_o}' alt=""></a>
-				  </div>
-			</li>`
-            // newURL.href=obj.url_o
-            // newIMG.src=obj.url_o
+			//   list.documentWrite += `
+			//   <li class="item sort01">
+			// 	  <div class="item-content">
+			// 	  <a href='${obj.url_o}' data-caption=""><img src='${obj.url_o}' alt=""></a>
+			// 	  </div>
+			// </li>`
+            newURL.href=obj.url_o
+            newIMG.src=obj.url_o
 			});
 			console.log('huh');
 		});
